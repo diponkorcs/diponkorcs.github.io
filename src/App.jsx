@@ -1,8 +1,11 @@
+import Navbar from '#components/Navbar.jsx'
 import React from 'react'
 
 const App = () => {
   return (
-    <h1 className='text-3xl font-bold '>Welcome to My Portfolio</h1>
+    <main>
+      <Navbar />
+    </main>
   )
 }
 

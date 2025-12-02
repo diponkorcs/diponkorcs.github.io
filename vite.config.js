@@ -13,24 +13,24 @@ export default defineConfig({
     alias: {
       "#components": resolve(
         dirname(fileURLToPath(import.meta.url)),
-        "components"
+        "src/components"
       ),
       "#constants": resolve(
         dirname(fileURLToPath(import.meta.url)),
-        "constants"
+        "src/constants"
       ),
       "#store": resolve(
         dirname(fileURLToPath(import.meta.url)),
-        "store"
+        "src/store"
       ),
       // Higher order components (hoc)
       "#hoc": resolve(
         dirname(fileURLToPath(import.meta.url)),
-        "hoc"
+        "src/hoc"
       ),
       "#windows": resolve(
         dirname(fileURLToPath(import.meta.url)),
-        "windows"
+        "src/windows"
       ),
     },
   },
