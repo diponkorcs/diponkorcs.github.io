@@ -96,7 +96,7 @@ const Welcome = () => {
       <h1 ref={titleRef} className="mt-8">
         {renderText(
           "Portfolio",
-          "text-9xl italic font-georama"
+          "text-9xl italic font-georama",
           // 400 // Dont need to pass 400, cause it is default, declared in function parameter
         )}
       </h1>
