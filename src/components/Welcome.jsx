@@ -1,5 +1,8 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 // Font weight animation settings
 const FONT_WEIGHTS = {
@@ -14,7 +17,7 @@ const renderText = (text, className, baseWeight = 400) => {
       key={i}
       className={className}
       style={{
-        fontVariationSettings: `'whgt ${baseWeight}`,
+        fontVariationSettings: `'wght ${baseWeight}`,
       }}
     >
       {char === " " ? "\u00A0" : char}
@@ -33,25 +36,52 @@ const setupHoverEffect = (container, type) => {
     return gsap.to(letter, {
       duration,
       ease: "power2.out",
-      fontVariationSettings: `'whgt ${weight}`,
+      fontVariationSettings: `'wght ${weight}`,
     });
   };
 
   const handleMouseMove = (event) => {
-    const {left} = container.getBoundingClientRect();
+    const { left } = container.getBoundingClientRect();
     const mouseX = event.clientX - left;
 
     letters.forEach((letter) => {
-      const {left: l, width: w} = letter.getBoundingClientRect();
+      const { left: l, width: w } = letter.getBoundingClientRect();
       const distance = Math.abs(mouseX - (l - left + w / 2));
-      const intensity = Math.exp(-(distance ** 2) / 2000)
-    })
+      const intensity = Math.exp(-(distance ** 2) / 2000);
+
+      animateLetter(letter, min + (max - min) * intensity);
+    });
+  };
+
+  const handleMouseLeave = () => {
+    letters.forEach((letter) => {
+      animateLetter(letter, base, 0.3);
+    });
+  };
+
+  container.addEventListener("mousemove", handleMouseMove);
+  container.addEventListener("mouseleave", handleMouseLeave);
+
+  return () => {
+    container.removeEventListener("mousemove", handleMouseMove);
+    container.removeEventListener("mouseleave", handleMouseLeave);
   }
 };
 
 const Welcome = () => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
+
+  // Use GSAP Hook
+  useGSAP(() => {
+    const titleCleanup = setupHoverEffect(titleRef.current, "title");
+    const subtitleCleanup = setupHoverEffect(subtitleRef.current, "subtitle");
+
+    return () => {
+      titleCleanup && titleCleanup();
+      subtitleCleanup && subtitleCleanup();
+    };
+  }, []);
 
   return (
     <section id="welcome">
