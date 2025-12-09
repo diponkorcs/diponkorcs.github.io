@@ -4,9 +4,9 @@ A portfolio looks like MacOS desktop environment
 # Tools
 * React + Vite
 * TailwindCSS
-* GSAP
-* Immer
-* Zustand
+* GSAP - Animation
+* Zustand - State Management tool; Just like Context or Redux
+* Immer - A middleware based on Zustand, lets us perform Immutable updates
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
