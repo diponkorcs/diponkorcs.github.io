@@ -3,8 +3,10 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
 import { Tooltip } from "react-tooltip";
+import useWindowStore from "#store/window.js";
 
 const Dock = () => {
+  const { openWindow, closeWindow, windows } = useWindowStore();
   const dockRef = useRef(null);
 
   //   useGSAP Hook to handle icon animations
@@ -64,6 +66,17 @@ const Dock = () => {
   // Open different windows by clicking on the dock icons
   const toggleApp = (app) => {
     // Implement Open Window Logic
+    if (!app.canOpen) return;
+
+    const window = windows[app.id];
+
+    if (window.isOpen) {
+      closeWindow(app.id);
+    } else {
+      openWindow(app.id);
+    }
+
+    console.log(windows)
   };
 
   return (
