@@ -12,6 +12,10 @@ const useWindowStore = create(
       set((state) => {
         const win = state.windows[windowKey];
 
+        // Defensive check : If the window doesn't exist, do nothing
+        if(!win) return;
+
+        // Open the window and set its zIndex
         win.isOpen = true;
         win.zIndex = state.nextZIndex;
         win.data = data ?? win.data;
@@ -26,12 +30,13 @@ const useWindowStore = create(
         // Defensive check : If the window doesn't exist, do nothing
         if(!win) return;
 
+        // Close the window and reset its zIndex
         win.isOpen = false;
         win.zIndex = INITIAL_Z_INDEX;
         win.data = null;
       }),
 
-    // bring a window to the front which is already opened
+    // bring a window to the front if it is already opened
     focusWindow: (windowKey) =>
       set((state) => {
         const win = state.windows[windowKey];
