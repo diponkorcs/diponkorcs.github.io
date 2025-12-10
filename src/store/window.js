@@ -23,6 +23,9 @@ const useWindowStore = create(
       set((state) => {
         const win = state.windows[windowKey];
 
+        // Defensive check : If the window doesn't exist, do nothing
+        if(!win) return;
+
         win.isOpen = false;
         win.zIndex = INITIAL_Z_INDEX;
         win.data = null;
