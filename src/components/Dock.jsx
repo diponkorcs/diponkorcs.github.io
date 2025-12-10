@@ -70,6 +70,11 @@ const Dock = () => {
 
     const window = windows[app.id];
 
+    if (!window) {
+      console.error(`No window configuration found for id: ${app.id}`);
+      return;
+    }
+
     if (window.isOpen) {
       closeWindow(app.id);
     } else {
