@@ -1,9 +1,16 @@
-import React from 'react'
+import { WindowControls } from "#components";
+import WindowWrapper from "#hoc/WindowWrapper.jsx";
 
 const Safari = () => {
   return (
-    <div>Safari</div>
-  )
-}
+    <>
+      <div id="window-header">
+        <WindowControls target="safari" />
+      </div>
+    </>
+  );
+};
 
-export default Safari
+const SafariWindow = WindowWrapper(Safari, "safari");
+
+export default SafariWindow;
