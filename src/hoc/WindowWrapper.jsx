@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
+import { Terminal } from "#windows";
 
 const WindowWrapper = (Component, windowKey) => {
   const Wrapped = (props) => {
@@ -13,6 +14,13 @@ const WindowWrapper = (Component, windowKey) => {
     const { isOpen, zIndex } = windows[windowKey];
     const ref = useRef(null);
     const firstRender = useRef(true);
+
+    // Per-window close animation mapping. Rendered conditionally by which window is being closed captured by windowKey.
+    const CLOSE_ANIMATIONS = {
+      terminal: { scale: 0.8, opacity: 0, x: 500, y: 500, duration: 0.6, ease: "power3.in" },
+      safari: { scale: 0.8, opacity: 0, x: 100, y: 500, duration: 0.6, ease: "power3.in" },
+      default: { scale: 0.8, opacity: 0, x: 500, y: 500, duration: 0.6, ease: "power3.in" },
+    };
 
     // Use GSAP to handle side effects related to window opening
     useGSAP(() => {
@@ -47,13 +55,10 @@ const WindowWrapper = (Component, windowKey) => {
           { scale: 1, opacity: 1, x: -90, y: 0, duration: 1, ease: "power3.out" }
         );
       } else {
+        const anim = CLOSE_ANIMATIONS[windowKey] || CLOSE_ANIMATIONS.default;
+
         gsap.to(element, {
-          scale: 0.8,
-          opacity: 0,
-          x: 500,
-          y: 500,
-          duration: 0.6,
-          ease: "power3.in",
+          ...anim,
           onComplete: () => {
             element.style.display = "none";
           },
