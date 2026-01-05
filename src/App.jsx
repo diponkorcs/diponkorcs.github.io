@@ -1,6 +1,7 @@
 import { Navbar, Welcome, Dock } from "#components";
 import { Terminal } from "#windows";
 import { Safari } from "#windows";
+import { Resume } from "#windows";
 
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
@@ -17,6 +18,7 @@ const App = () => {
       {/* Windows */}
       <Terminal />
       <Safari />
+      <Resume />
     </main>
   );
 };
