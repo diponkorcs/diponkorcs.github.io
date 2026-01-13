@@ -1,8 +1,25 @@
+import WindowWrapper from "#hoc/WindowWrapper.jsx";
 
 const Contact = () => {
   return (
-    <div>Contact</div>
-  )
-}
+    <>
+      <div id="window-header">
+        <h2> Contact Me </h2>
+      </div>
 
-export default Contact
+      <div className="p-5 space-y-5">
+        <img
+          src="/images/adrian.jpg"
+          alt="Adrian"
+          className="w-20 rounded-full"
+        />
+
+        <h3>Lets Connect</h3>
+      </div>
+    </>
+  );
+};
+
+const ContactWindow = WindowWrapper(Contact, "contact");
+
+export default ContactWindow;
