@@ -1,9 +1,12 @@
+import { WindowControls } from "#components";
+import { socials } from "#constants";
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
 
 const Contact = () => {
   return (
     <>
       <div id="window-header">
+        <WindowControls target="contact" />
         <h2> Contact Me </h2>
       </div>
 
@@ -15,6 +18,25 @@ const Contact = () => {
         />
 
         <h3>Lets Connect</h3>
+        <p>Got an idea? Lets Talk!!</p>
+
+        <p>diponkorchandrashil678@gmail.com</p>
+
+        <ul>
+          {socials.map(({ id, bg, link, icon, text }) => (
+            <li key={id} style={{ backgroundColor: bg }}>
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={text}
+              >
+                <img src={icon} alt={text} className="size-5" />
+                <p>{text}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );
