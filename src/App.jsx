@@ -7,7 +7,7 @@ import {
   Text,
   Image,
   Contact,
-  Gallery,
+  Photos,
 } from "#windows";
 
 import { gsap } from "gsap";
@@ -30,7 +30,7 @@ const App = () => {
       <Text />
       <Image />
       <Contact />
-      <Gallery />
+      <Photos />
 
       {/* Shortcuts */}
       <Home />
