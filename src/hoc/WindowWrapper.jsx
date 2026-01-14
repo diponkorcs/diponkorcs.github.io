@@ -20,15 +20,15 @@ const WindowWrapper = (Component, windowKey) => {
       finder: {
         scale: 0.8,
         opacity: 0,
-        x: 500,
-        y: 100,
+        x: 300,
+        y: 500,
         duration: 0.6,
         ease: "power3.in",
       },
       safari: {
         scale: 0.8,
         opacity: 0,
-        x: 100,
+        x: 200,
         y: 500,
         duration: 0.6,
         ease: "power3.in",
@@ -36,7 +36,7 @@ const WindowWrapper = (Component, windowKey) => {
       photos: {
         scale: 0.8,
         opacity: 0,
-        x: -500,
+        x: -400,
         y: 500,
         duration: 0.6,
         ease: "power3.in",
@@ -44,8 +44,8 @@ const WindowWrapper = (Component, windowKey) => {
       contact: {
         scale: 0.8,
         opacity: 0,
-        x: -500,
-        y: 100,
+        x: -100,
+        y: 500,
         duration: 0.6,
         ease: "power3.in",
       },
