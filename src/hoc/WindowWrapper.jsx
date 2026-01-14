@@ -17,9 +17,55 @@ const WindowWrapper = (Component, windowKey) => {
 
     // Per-window close animation mapping. Rendered conditionally by which window is being closed captured by windowKey.
     const CLOSE_ANIMATIONS = {
-      terminal: { scale: 0.8, opacity: 0, x: 500, y: 500, duration: 0.6, ease: "power3.in" },
-      safari: { scale: 0.8, opacity: 0, x: 100, y: 500, duration: 0.6, ease: "power3.in" },
-      default: { scale: 0.8, opacity: 0, x: 500, y: 500, duration: 0.6, ease: "power3.in" },
+      finder: {
+        scale: 0.8,
+        opacity: 0,
+        x: 500,
+        y: 100,
+        duration: 0.6,
+        ease: "power3.in",
+      },
+      safari: {
+        scale: 0.8,
+        opacity: 0,
+        x: 100,
+        y: 500,
+        duration: 0.6,
+        ease: "power3.in",
+      },
+      photos: {
+        scale: 0.8,
+        opacity: 0,
+        x: -500,
+        y: 500,
+        duration: 0.6,
+        ease: "power3.in",
+      },
+      contact: {
+        scale: 0.8,
+        opacity: 0,
+        x: -500,
+        y: 100,
+        duration: 0.6,
+        ease: "power3.in",
+      },
+      terminal: {
+        scale: 0.8,
+        opacity: 0,
+        x: 500,
+        y: 500,
+        duration: 0.6,
+        ease: "power3.in",
+      },
+
+      default: {
+        scale: 0.8,
+        opacity: 0,
+        x: 500,
+        y: 500,
+        duration: 0.6,
+        ease: "power3.in",
+      },
     };
 
     // Use GSAP to handle side effects related to window opening
@@ -39,7 +85,14 @@ const WindowWrapper = (Component, windowKey) => {
           gsap.fromTo(
             element,
             { scale: 0.8, opacity: 0, x: 500, y: 500 },
-            { scale: 1, opacity: 1, x: -90, y: 0, duration: 1, ease: "power3.out" }
+            {
+              scale: 1,
+              opacity: 1,
+              x: -90,
+              y: 0,
+              duration: 1,
+              ease: "power3.out",
+            }
           );
         }
 
@@ -52,7 +105,14 @@ const WindowWrapper = (Component, windowKey) => {
         gsap.fromTo(
           element,
           { scale: 0.8, opacity: 0, x: 500, y: 500 },
-          { scale: 1, opacity: 1, x: -90, y: 0, duration: 1, ease: "power3.out" }
+          {
+            scale: 1,
+            opacity: 1,
+            x: -90,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+          }
         );
       } else {
         const anim = CLOSE_ANIMATIONS[windowKey] || CLOSE_ANIMATIONS.default;
