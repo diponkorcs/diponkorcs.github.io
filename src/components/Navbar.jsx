@@ -4,8 +4,18 @@ import React from "react";
 import useWindowStore from "#store/window";
 
 const Navbar = () => {
+  const { openWindow, closeWindow, windows } = useWindowStore();
 
-  const { openWindow } = useWindowStore();
+  // Toggle window: close if open, open if closed/not present
+  const toggleWindow = (type) => {
+    const win = windows?.[type];
+    if (win && win.isOpen) {
+      closeWindow(type);
+    } else {
+      openWindow(type);
+    }
+  };
+
   return (
     <nav>
       {/* Left Side */}
@@ -16,8 +26,8 @@ const Navbar = () => {
 
         <ul>
           {navLinks.map(({ id, name, type }) => (
-            <li key={id} onClick={() => openWindow(type)}>
-              <p> {name}</p>
+            <li key={id} onClick={() => toggleWindow(type)}>
+              <p>{name}</p>
             </li>
           ))}
         </ul>
