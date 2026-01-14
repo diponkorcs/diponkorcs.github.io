@@ -57,6 +57,14 @@ const WindowWrapper = (Component, windowKey) => {
         duration: 0.6,
         ease: "power3.in",
       },
+      resume: {
+        scale: 0.8,
+        opacity: 0,
+        x: -500,
+        y: 500,
+        duration: 0.6,
+        ease: "power3.in",
+      },
 
       default: {
         scale: 0.8,
