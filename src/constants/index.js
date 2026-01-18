@@ -198,7 +198,7 @@ const gallery = [
   },
   {
     id: 3,
-    img: "/images/dipto3.jpg",
+    img: "/images/dipto5.png",
   },
   {
     id: 4,
