@@ -5,7 +5,7 @@ import { Check, Flag } from "lucide-react";
 
 const Terminal = () => {
   return (
-    <>
+    <div className="">
       <div id="window-header">
         {/* <p>Window Controls</p> */}
         <WindowControls target="terminal" />
@@ -44,7 +44,7 @@ const Terminal = () => {
         <div className="footnote">
           <p>
             <Check size={20} />
-            5 of 5 stacks loaded successfully (100%)
+            6 of 6 stacks loaded successfully (100%)
           </p>
 
           <p className="text-black">
@@ -53,7 +53,7 @@ const Terminal = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
