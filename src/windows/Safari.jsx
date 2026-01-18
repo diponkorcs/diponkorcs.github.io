@@ -1,5 +1,5 @@
 import { WindowControls } from "#components";
-import { blogPosts } from "#constants";
+import { blogPosts, experiences } from "#constants";
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
 import {
   ChevronLeft,
@@ -48,10 +48,10 @@ const Safari = () => {
       </div>
 
       <div className="blog">
-        <h2>My Developer Blog</h2>
+        <h2>Education & Experiences</h2>
 
-        <div className="space-y-8">
-          {blogPosts.map(({id, image, title, date, link}) => (
+        <div className="space-y-8 ">
+          {/* {blogPosts.map(({id, image, title, date, link}) => (
             <div key={id} className="blog-post">
               <div className="col-span-2">
                 <img src={image} alt={title} />
@@ -63,6 +63,20 @@ const Safari = () => {
                 <a href={link} target="_blank" rel="noopener noreferrer">
                   Check out the full post <MoveRight className="icon-hover" />
                 </a>
+              </div>
+            </div>
+          ))} */}
+          {experiences.map(({ id, name, role, period, description, image }) => (
+            <div key={id} className="blog-post">
+              <div className="col-span-2 m-2">
+                <img src={image} alt={name} />
+              </div>
+
+              <div className="content">
+                <h3>{name}</h3>
+                <p>{role}</p>
+                <p>{period}</p>
+                <p>{description}</p>
               </div>
             </div>
           ))}

@@ -99,6 +99,37 @@ const blogPosts = [
   },
 ];
 
+const experiences = [
+  {
+    id: 1,
+    name: "TGIT Bangladesh",
+    role: "Frontend Software Developer",
+    period: "Apr 2022 - Present",
+    description:
+      "Worked as a frontend software developer. Also have experience working in native application development.",
+    image: "/images/tgit.png",
+  },
+  {
+    id: 2,
+    name: "TGIT Bangladesh",
+    role: "Trainee Software Developer",
+    period: "Feb 2022 - Apr 2022",
+    description:
+      "Worked as a part of the Web Development team as a frontend developer.",
+    image: "/images/tgit.png",
+  },
+  {
+    id: 3,
+    name: "American International University-Bangladesh",
+    role: "BSc in Computer Science and Engineering",
+    period: "May 2018 - Apr 2022",
+    description:
+      "Major: Software Engineering",
+    image: "/images/aiub.png",
+  },
+  
+];
+
 const techStack = [
   {
     category: "Frontend",
@@ -211,6 +242,7 @@ export {
   navIcons,
   dockApps,
   blogPosts,
+  experiences,
   techStack,
   socials,
   photosLinks,
