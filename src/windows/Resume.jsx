@@ -4,10 +4,11 @@ import { WindowControls } from "#components";
 import { Download } from "lucide-react";
 import { Document, Page, pdfjs } from "react-pdf";
 
-// Import PDF worker and styles from react-pdf
+// Import PDF worker and styles from react-pdf, needed for proper PDF rendering, copied from react-pdf documentation
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
-// Set the worker source for pdfjs copied from react-pdf documentation
+
+// Set the worker source for pdfjs, copied from react-pdf documentation
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
   import.meta.url
