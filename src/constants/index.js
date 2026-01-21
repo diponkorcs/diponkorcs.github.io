@@ -256,7 +256,7 @@ const WORK_LOCATION = {
   children: [
     // ▶ Project 1
     {
-      id: 1,
+      id: 5,
       name: "Smart Thinks BD",
       icon: "/images/folder.png",
       kind: "folder",
@@ -314,12 +314,12 @@ const WORK_LOCATION = {
 
     // ▶ Project 2
     {
-      id: 2,
+      id: 6,
       name: "Rang Mein Bhang",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-52 right-80",
-      windowPosition: "top-[20vh] left-7",
+      windowPosition: "top-[5vh] left-50",
       children: [
         // {
         //   id: 1,
@@ -371,11 +371,11 @@ const WORK_LOCATION = {
 
     // ▶ Project 3
     {
-      id: 3,
+      id: 7,
       name: "TGIT Bangladesh",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-80",
+      position: "top-10 right-10",
       windowPosition: "top-[5vh] right-7",
       children: [
         // {
@@ -424,12 +424,12 @@ const WORK_LOCATION = {
 
     // ▶ Project 4
     {
-      id: 4,
+      id: 8,
       name: "IQF Education",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 right-50",
-      windowPosition: "top-[5vh] left-50",
+      position: "top-52 right-20",
+      windowPosition: "top-[70vh] left-30",
       children: [
         // {
         //   id: 1,
@@ -476,12 +476,12 @@ const WORK_LOCATION = {
     },
     // ▶ Project 5
     {
-      id: 5,
+      id: 9,
       name: "Brain Accounting",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 right-50",
-      windowPosition: "top-[80vh] right-7",
+      windowPosition: "top-[70vh] right-7",
       children: [
         // {
         //   id: 1,
@@ -610,21 +610,21 @@ const TRASH_LOCATION = {
   children: [
     {
       id: 1,
-      name: "trash1.png",
+      name: "Gaps.png",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
       position: "top-10 left-10",
-      imageUrl: "/images/trash-1.png",
+      imageUrl: "/images/Trash/GAPS.PNG",
     },
     {
       id: 2,
-      name: "trash2.png",
+      name: "SkyTouchEducation.png",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
       position: "top-40 left-80",
-      imageUrl: "/images/trash-2.png",
+      imageUrl: "/images/Trash/SKY.PNG",
     },
   ],
 };
