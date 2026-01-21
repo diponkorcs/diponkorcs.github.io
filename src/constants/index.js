@@ -123,11 +123,9 @@ const experiences = [
     name: "American International University-Bangladesh",
     role: "BSc in Computer Science and Engineering",
     period: "May 2018 - Apr 2022",
-    description:
-      "Major: Software Engineering",
+    description: "Major: Software Engineering",
     image: "/images/aiub.png",
   },
-  
 ];
 
 const techStack = [
@@ -263,7 +261,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
-      windowPosition: "top-[5vh] right-5", // optional: Finder window position
+      windowPosition: "top-[33vh] left-7", // optional: Finder window position
       children: [
         // {
         //   id: 1,
@@ -378,7 +376,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-80",
-      windowPosition: "top-[33vh] left-7",
+      windowPosition: "top-[5vh] right-7",
       children: [
         // {
         //   id: 1,
@@ -426,12 +424,12 @@ const WORK_LOCATION = {
 
     // ▶ Project 4
     {
-      id: 3,
-      name: "TGIT Bangladesh",
+      id: 4,
+      name: "IQF Education",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-80",
-      windowPosition: "top-[33vh] left-7",
+      position: "top-10 right-50",
+      windowPosition: "top-[5vh] left-50",
       children: [
         // {
         //   id: 1,
@@ -449,21 +447,73 @@ const WORK_LOCATION = {
         // },
         {
           id: 2,
-          name: "TGIT-Bangladesh.com",
+          name: "IQF-Education.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://tgitbangladesh.com/",
+          href: "https://www.iqfawards.com/index",
           position: "top-10 right-20",
         },
         {
           id: 4,
-          name: "tgit-bangladesh.png",
+          name: "iqf-education.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           position: "top-52 right-80",
-          imageUrl: "/images/Projects/TGIT Bangladesh/TGIT.PNG",
+          imageUrl: "/images/Projects/IQFEducation/IQF.PNG",
+        },
+        // {
+        //   id: 5,
+        //   name: "Design.fig",
+        //   icon: "/images/plain.png",
+        //   kind: "file",
+        //   fileType: "fig",
+        //   href: "https://google.com",
+        //   position: "top-60 right-20",
+        // },
+      ],
+    },
+    // ▶ Project 5
+    {
+      id: 5,
+      name: "Brain Accounting",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-10 right-50",
+      windowPosition: "top-[80vh] right-7",
+      children: [
+        // {
+        //   id: 1,
+        //   name: "Food Delivery App Project.txt",
+        //   icon: "/images/txt.png",
+        //   kind: "file",
+        //   fileType: "txt",
+        //   position: "top-5 left-10",
+        //   description: [
+        //     "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
+        //     "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
+        //     "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
+        //     "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
+        //   ],
+        // },
+        {
+          id: 2,
+          name: "Brain-Accountings.com",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://brainaccountings.com/index",
+          position: "top-10 right-20",
+        },
+        {
+          id: 4,
+          name: "brain-accounting.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-52 right-80",
+          imageUrl: "/images/Projects/BrainAccountings/BA.PNG",
         },
         // {
         //   id: 5,
