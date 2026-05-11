@@ -255,13 +255,71 @@ const WORK_LOCATION = {
   kind: "folder",
   children: [
     // ▶ Project 1
+    // {
+    //   id: 5,
+    //   name: "Smart Thinks BD",
+    //   icon: "/images/folder.png",
+    //   kind: "folder",
+    //   position: "top-10 left-5", // icon position inside Finder
+    //   // windowPosition: "top-[33vh] left-7", // optional: Finder window position
+    //   windowPosition: "top-[33vh] left-20", // optional: Finder window position
+    //   children: [
+    //     // {
+    //     //   id: 1,
+    //     //   name: "Nike Project.txt",
+    //     //   icon: "/images/txt.png",
+    //     //   kind: "file",
+    //     //   fileType: "txt",
+    //     //   position: "top-52 right-80",
+    //     //   description: [
+    //     //     "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
+    //     //     "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
+    //     //     "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
+    //     //     "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+    //     //   ],
+    //     // },
+
+    //     // Link
+    //     {
+    //       id: 2,
+    //       name: "SmartThinksBD.com",
+    //       icon: "/images/safari.png",
+    //       kind: "file",
+    //       fileType: "url",
+    //       href: "https://smartthinksbd.com/",
+    //       position: "top-10 right-20",
+    //     },
+
+    //     // Image
+    //     {
+    //       id: 4,
+    //       name: "smartthinksbd.png",
+    //       icon: "/images/image.png",
+    //       kind: "file",
+    //       fileType: "img",
+    //       // position: "top-52 right-80",
+    //       position: "top-10 left-10",
+    //       imageUrl: "/images/Projects/SmartThink/Smart.PNG",
+    //     },
+    //     // {
+    //     //   id: 5,
+    //     //   name: "Design.fig",
+    //     //   icon: "/images/plain.png",
+    //     //   kind: "file",
+    //     //   fileType: "fig",
+    //     //   href: "https://google.com",
+    //     //   position: "top-60 right-20",
+    //     // },
+    //   ],
+    // },
     {
       id: 5,
-      name: "Smart Thinks BD",
+      name: "Coffee Canvas",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
-      windowPosition: "top-[33vh] left-7", // optional: Finder window position
+      // windowPosition: "top-[33vh] left-7", // optional: Finder window position
+      windowPosition: "top-[33vh] left-15", // optional: Finder window position
       children: [
         // {
         //   id: 1,
@@ -281,24 +339,24 @@ const WORK_LOCATION = {
         // Link
         {
           id: 2,
-          name: "SmartThinksBD.com",
+          name: "CoffeeCanvasBD.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://smartthinksbd.com/",
+          href: "https://coffeecanvasbd.com/",
           position: "top-10 right-20",
         },
 
         // Image
         {
           id: 4,
-          name: "smartthinksbd.png",
+          name: "CoffeeCanvas.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           // position: "top-52 right-80",
           position: "top-10 left-10",
-          imageUrl: "/images/Projects/SmartThink/Smart.PNG",
+          imageUrl: "/images/Projects/CoffeeCanvas/Coffee.PNG",
         },
         // {
         //   id: 5,
