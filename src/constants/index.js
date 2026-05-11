@@ -44,7 +44,7 @@ const dockApps = [
   },
   {
     id: "safari",
-    name: "Articles", // was "Safari"
+    name: "Experiences", // was "Safari / Articles"
     icon: "safari.png",
     canOpen: true,
   },
@@ -107,7 +107,7 @@ const experiences = [
     period: "Apr 2022 - Present",
     description:
       "Worked as a frontend software developer. Also have experience working in native application development.",
-    image: "/images/tgit.png",
+    image: "/images/tgit-icon.png",
   },
   {
     id: 2,
@@ -116,7 +116,7 @@ const experiences = [
     period: "Feb 2022 - Apr 2022",
     description:
       "Worked as a part of the Web Development team as a frontend developer.",
-    image: "/images/tgit.png",
+    image: "/images/tgit-icon.png",
   },
   {
     id: 3,
