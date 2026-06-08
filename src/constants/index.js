@@ -254,52 +254,46 @@ const WORK_LOCATION = {
   icon: "/icons/work.svg",
   kind: "folder",
   children: [
-    // ▶ Project 1
+    // Extra Projects to be used later
     // {
-    //   id: 5,
-    //   name: "Smart Thinks BD",
+    //   id: 8,
+    //   name: "IQF Education",
     //   icon: "/images/folder.png",
     //   kind: "folder",
-    //   position: "top-10 left-5", // icon position inside Finder
-    //   // windowPosition: "top-[33vh] left-7", // optional: Finder window position
-    //   windowPosition: "top-[33vh] left-20", // optional: Finder window position
+    //   position: "top-52 right-20",
+    //   windowPosition: "top-[70vh] left-30",
     //   children: [
     //     // {
     //     //   id: 1,
-    //     //   name: "Nike Project.txt",
+    //     //   name: "Food Delivery App Project.txt",
     //     //   icon: "/images/txt.png",
     //     //   kind: "file",
     //     //   fileType: "txt",
-    //     //   position: "top-52 right-80",
+    //     //   position: "top-5 left-10",
     //     //   description: [
-    //     //     "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
-    //     //     "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
-    //     //     "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
-    //     //     "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+    //     //     "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
+    //     //     "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
+    //     //     "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
+    //     //     "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
     //     //   ],
     //     // },
-
-    //     // Link
     //     {
     //       id: 2,
-    //       name: "SmartThinksBD.com",
+    //       name: "IQF-Education.com",
     //       icon: "/images/safari.png",
     //       kind: "file",
     //       fileType: "url",
-    //       href: "https://smartthinksbd.com/",
+    //       href: "https://www.iqfawards.com/index",
     //       position: "top-10 right-20",
     //     },
-
-    //     // Image
     //     {
     //       id: 4,
-    //       name: "smartthinksbd.png",
+    //       name: "iqf-education.png",
     //       icon: "/images/image.png",
     //       kind: "file",
     //       fileType: "img",
-    //       // position: "top-52 right-80",
-    //       position: "top-10 left-10",
-    //       imageUrl: "/images/Projects/SmartThink/Smart.PNG",
+    //       position: "top-52 right-80",
+    //       imageUrl: "/images/Projects/IQFEducation/IQF.PNG",
     //     },
     //     // {
     //     //   id: 5,
@@ -312,14 +306,72 @@ const WORK_LOCATION = {
     //     // },
     //   ],
     // },
+
+
+    // ▶ Project 1
     {
-      id: 5,
-      name: "Coffee Canvas",
+      id: 1,
+      // id: 9,
+      name: "Brain Accounting",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-10 right-50",
+      // windowPosition: "top-[70vh] right-15",
+      windowPosition: "top-[5vh] left-50",
+      children: [
+        // {
+        //   id: 1,
+        //   name: "Food Delivery App Project.txt",
+        //   icon: "/images/txt.png",
+        //   kind: "file",
+        //   fileType: "txt",
+        //   position: "top-5 left-10",
+        //   description: [
+        //     "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
+        //     "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
+        //     "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
+        //     "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
+        //   ],
+        // },
+        {
+          id: 2,
+          name: "Brain-Accountings.com",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://brainaccountings.com/",
+          position: "top-10 right-20",
+        },
+        {
+          id: 4,
+          name: "brain-accounting.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-52 right-80",
+          imageUrl: "/images/Projects/BrainAccountings/BA.PNG",
+        },
+        // {
+        //   id: 5,
+        //   name: "Design.fig",
+        //   icon: "/images/plain.png",
+        //   kind: "file",
+        //   fileType: "fig",
+        //   href: "https://google.com",
+        //   position: "top-60 right-20",
+        // },
+      ],
+    },
+
+    // ▶ Project 2
+    {
+      id: 2,
+      name: "Smart Think BD",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
       // windowPosition: "top-[33vh] left-7", // optional: Finder window position
-      windowPosition: "top-[33vh] left-15", // optional: Finder window position
+      windowPosition: "top-[33vh] left-20", // optional: Finder window position
       children: [
         // {
         //   id: 1,
@@ -339,97 +391,42 @@ const WORK_LOCATION = {
         // Link
         {
           id: 2,
-          name: "CoffeeCanvasBD.com",
+          name: "SmartThinksBD.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://coffeecanvasbd.com/",
+          href: "https://smartthinkbd.com/",
           position: "top-10 right-20",
         },
 
         // Image
         {
           id: 4,
-          name: "CoffeeCanvas.png",
+          name: "smartthinksbd.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           // position: "top-52 right-80",
           position: "top-10 left-10",
-          imageUrl: "/images/Projects/CoffeeCanvas/Coffee.PNG",
+          imageUrl: "/images/Projects/SmartThink/Smart.png",
         },
-        // {
-        //   id: 5,
-        //   name: "Design.fig",
-        //   icon: "/images/plain.png",
-        //   kind: "file",
-        //   fileType: "fig",
-        //   href: "https://google.com",
-        //   position: "top-60 right-20",
-        // },
-      ],
-    },
-
-    // ▶ Project 2
-    {
-      id: 6,
-      name: "Rang Mein Bhang",
-      icon: "/images/folder.png",
-      kind: "folder",
-      position: "top-52 right-80",
-      windowPosition: "top-[5vh] left-50",
-      children: [
-        // {
-        //   id: 1,
-        //   name: "AI Resume Analyzer Project.txt",
-        //   icon: "/images/txt.png",
-        //   kind: "file",
-        //   fileType: "txt",
-        //   position: "top-5 right-10",
-        //   description: [
-        //     "AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.",
-        //     "Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.",
-        //     "Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.",
-        //     "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
-        //   ],
-        // },
-
-        // Link
+        // Another Image
         {
-          id: 2,
-          name: "RangMeinBhang.com",
-          icon: "/images/safari.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://rangmeinbhang.com/",
-          position: "top-20 left-20",
-        },
-
-        // Image
-        {
-          id: 4,
-          name: "rangmeinbhang.png",
+          id: 5,
+          name: "ProductSpecification.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-52 left-80",
-          imageUrl: "/images/Projects/RangMeinBhang/RMB.PNG",
+          // href: "https://google.com",
+          position: "top-60 right-20",
+          imageUrl: "/images/Projects/SmartThink/Product-Spec.png",
         },
-        // {
-        //   id: 5,
-        //   name: "Design.fig",
-        //   icon: "/images/plain.png",
-        //   kind: "file",
-        //   fileType: "fig",
-        //   href: "https://google.com",
-        //   position: "top-60 left-5",
-        // },
       ],
     },
 
     // ▶ Project 3
     {
-      id: 7,
+      id: 3,
       name: "TGIT Bangladesh",
       icon: "/images/folder.png",
       kind: "folder",
@@ -482,44 +479,50 @@ const WORK_LOCATION = {
 
     // ▶ Project 4
     {
-      id: 8,
-      name: "IQF Education",
+      id: 4,
+      name: "Coffee Canvas",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 right-20",
-      windowPosition: "top-[70vh] left-30",
+      position: "top-10 left-5", // icon position inside Finder
+      windowPosition: "top-[70vh] left-25", // optional: Finder window position
+      // windowPosition: "top-[33vh] left-15", // optional: Finder window position
       children: [
         // {
         //   id: 1,
-        //   name: "Food Delivery App Project.txt",
+        //   name: "Nike Project.txt",
         //   icon: "/images/txt.png",
         //   kind: "file",
         //   fileType: "txt",
-        //   position: "top-5 left-10",
+        //   position: "top-52 right-80",
         //   description: [
-        //     "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
-        //     "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
-        //     "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
-        //     "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
+        //     "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
+        //     "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
+        //     "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
+        //     "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
         //   ],
         // },
+
+        // Link
         {
           id: 2,
-          name: "IQF-Education.com",
+          name: "CoffeeCanvasBD.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://www.iqfawards.com/index",
+          href: "https://coffeecanvasbd.com/",
           position: "top-10 right-20",
         },
+
+        // Image
         {
           id: 4,
-          name: "iqf-education.png",
+          name: "CoffeeCanvas.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-52 right-80",
-          imageUrl: "/images/Projects/IQFEducation/IQF.PNG",
+          // position: "top-52 right-80",
+          position: "top-10 left-10",
+          imageUrl: "/images/Projects/CoffeeCanvas/Coffee.PNG",
         },
         // {
         //   id: 5,
@@ -532,46 +535,52 @@ const WORK_LOCATION = {
         // },
       ],
     },
+
     // ▶ Project 5
     {
-      id: 9,
-      name: "Brain Accounting",
+      id: 5,
+      name: "Rang Mein Bhang",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 right-50",
-      windowPosition: "top-[70vh] right-7",
+      position: "top-52 right-80",
+      // windowPosition: "top-[5vh] left-50",
+      windowPosition: "top-[70vh] right-15",
       children: [
         // {
         //   id: 1,
-        //   name: "Food Delivery App Project.txt",
+        //   name: "AI Resume Analyzer Project.txt",
         //   icon: "/images/txt.png",
         //   kind: "file",
         //   fileType: "txt",
-        //   position: "top-5 left-10",
+        //   position: "top-5 right-10",
         //   description: [
-        //     "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
-        //     "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
-        //     "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
-        //     "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
+        //     "AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.",
+        //     "Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.",
+        //     "Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.",
+        //     "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
         //   ],
         // },
+
+        // Link
         {
           id: 2,
-          name: "Brain-Accountings.com",
+          name: "RangMeinBhang.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://brainaccountings.com/index",
-          position: "top-10 right-20",
+          href: "https://rangmeinbhang.com/",
+          position: "top-20 left-20",
         },
+
+        // Image
         {
           id: 4,
-          name: "brain-accounting.png",
+          name: "rangmeinbhang.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-52 right-80",
-          imageUrl: "/images/Projects/BrainAccountings/BA.PNG",
+          position: "top-52 left-80",
+          imageUrl: "/images/Projects/RangMeinBhang/RMB.PNG",
         },
         // {
         //   id: 5,
@@ -580,10 +589,11 @@ const WORK_LOCATION = {
         //   kind: "file",
         //   fileType: "fig",
         //   href: "https://google.com",
-        //   position: "top-60 right-20",
+        //   position: "top-60 left-5",
         // },
       ],
     },
+    // ▶ Project 6
   ],
 };
 
