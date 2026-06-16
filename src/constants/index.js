@@ -307,7 +307,6 @@ const WORK_LOCATION = {
     //   ],
     // },
 
-
     // ▶ Project 1
     {
       id: 1,
@@ -315,7 +314,8 @@ const WORK_LOCATION = {
       name: "Brain Accounting",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 right-50",
+      position: "top-10 left-5",
+      // position: "top-10 right-50",
       // windowPosition: "top-[70vh] right-15",
       windowPosition: "top-[5vh] left-50",
       children: [
@@ -369,7 +369,8 @@ const WORK_LOCATION = {
       name: "Smart Think BD",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-5", // icon position inside Finder
+      position: "top-10 right-50", // icon position inside Finder
+      // position: "top-10 left-5", // icon position inside Finder
       // windowPosition: "top-[33vh] left-7", // optional: Finder window position
       windowPosition: "top-[33vh] left-20", // optional: Finder window position
       children: [
@@ -483,7 +484,9 @@ const WORK_LOCATION = {
       name: "Coffee Canvas",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-5", // icon position inside Finder
+      position: "top-52 right-80",
+
+      // position: "top-52 right-20", // icon position inside Finder
       windowPosition: "top-[70vh] left-25", // optional: Finder window position
       // windowPosition: "top-[33vh] left-15", // optional: Finder window position
       children: [
@@ -542,7 +545,8 @@ const WORK_LOCATION = {
       name: "Rang Mein Bhang",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 right-80",
+      position: "top-52 right-20", // icon position inside Finder
+
       // windowPosition: "top-[5vh] left-50",
       windowPosition: "top-[70vh] right-15",
       children: [
