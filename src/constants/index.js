@@ -227,7 +227,7 @@ const gallery = [
   },
   {
     id: 3,
-    img: "/images/dipto5.png",
+    img: "/images/dipto5.jpg",
   },
   {
     id: 4,
@@ -293,7 +293,7 @@ const WORK_LOCATION = {
     //       kind: "file",
     //       fileType: "img",
     //       position: "top-52 right-80",
-    //       imageUrl: "/images/Projects/IQFEducation/IQF.PNG",
+    //       imageUrl: "/images/Projects/IQFEducation/IQF.jpg",
     //     },
     //     // {
     //     //   id: 5,
@@ -349,7 +349,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-52 right-80",
-          imageUrl: "/images/Projects/BrainAccountings/BA.PNG",
+          imageUrl: "/images/Projects/BrainAccountings/BA.jpg",
         },
         // {
         //   id: 5,
@@ -409,7 +409,7 @@ const WORK_LOCATION = {
           fileType: "img",
           // position: "top-52 right-80",
           position: "top-10 left-10",
-          imageUrl: "/images/Projects/SmartThink/Smart.png",
+          imageUrl: "/images/Projects/SmartThink/Smart.jpg",
         },
         // Another Image
         {
@@ -420,7 +420,7 @@ const WORK_LOCATION = {
           fileType: "img",
           // href: "https://google.com",
           position: "top-60 right-20",
-          imageUrl: "/images/Projects/SmartThink/Product-Spec.png",
+          imageUrl: "/images/Projects/SmartThink/Product-Spec.jpg",
         },
       ],
     },
@@ -464,7 +464,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-52 right-80",
-          imageUrl: "/images/Projects/TGIT Bangladesh/TGIT.PNG",
+          imageUrl: "/images/Projects/TGIT Bangladesh/TGIT.jpg",
         },
         // {
         //   id: 5,
@@ -525,7 +525,7 @@ const WORK_LOCATION = {
           fileType: "img",
           // position: "top-52 right-80",
           position: "top-10 left-10",
-          imageUrl: "/images/Projects/CoffeeCanvas/Coffee.PNG",
+          imageUrl: "/images/Projects/CoffeeCanvas/Coffee.jpg",
         },
         // {
         //   id: 5,
@@ -584,7 +584,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-52 left-80",
-          imageUrl: "/images/Projects/RangMeinBhang/RMB.PNG",
+          imageUrl: "/images/Projects/RangMeinBhang/RMB.jpg",
         },
         // {
         //   id: 5,
@@ -633,7 +633,7 @@ const ABOUT_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
-      imageUrl: "/images/dipto5.png",
+      imageUrl: "/images/dipto5.jpg",
     },
     {
       id: 4,
@@ -687,7 +687,7 @@ const TRASH_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-10 left-10",
-      imageUrl: "/images/Trash/GAPS.PNG",
+      imageUrl: "/images/Trash/GAPS.jpg",
     },
     {
       id: 2,
@@ -696,7 +696,7 @@ const TRASH_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-40 left-80",
-      imageUrl: "/images/Trash/SKY.PNG",
+      imageUrl: "/images/Trash/SKY.jpg",
     },
   ],
 };

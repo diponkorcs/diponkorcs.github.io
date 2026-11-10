@@ -1,15 +1,4 @@
-import { Navbar, Welcome, Dock, Home } from "#components";
-import {
-  Terminal,
-  Safari,
-  Resume,
-  Finder,
-  Text,
-  Image,
-  Contact,
-  Photos,
-} from "#windows";
-import MobileApp from "#mobile/MobileApp.jsx";
+import { lazy, Suspense } from "react";
 import useIsMobile from "#hooks/useIsMobile.js";
 
 import { gsap } from "gsap";
@@ -17,31 +6,20 @@ import { Draggable } from "gsap/Draggable";
 
 gsap.registerPlugin(Draggable);
 
-const DesktopApp = () => (
-  <main>
-    <Navbar />
-    <Welcome />
-    <Dock />
-
-    {/* Windows */}
-    <Terminal />
-    <Safari />
-    <Resume />
-    <Finder />
-    <Text />
-    <Image />
-    <Contact />
-    <Photos />
-
-    {/* Shortcuts */}
-    <Home />
-  </main>
-);
+// Each UI is its own chunk: phones only download the mobile code,
+// desktops only download the desktop code.
+const DesktopApp = lazy(() => import("./DesktopApp.jsx"));
+const MobileApp = lazy(() => import("#mobile/MobileApp.jsx"));
 
 const App = () => {
   const isMobile = useIsMobile();
 
-  return isMobile ? <MobileApp /> : <DesktopApp />;
+  // fallback is null: the wallpaper (set on <body>) shows while loading
+  return (
+    <Suspense fallback={null}>
+      {isMobile ? <MobileApp /> : <DesktopApp />}
+    </Suspense>
+  );
 };
 
 export default App;
