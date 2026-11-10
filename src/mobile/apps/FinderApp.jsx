@@ -1,4 +1,5 @@
 import { useState } from "react";
+import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import MobileSheet from "#mobile/MobileSheet.jsx";
 import { locations } from "#constants";
@@ -94,7 +95,13 @@ const FinderApp = () => {
 
       {current ? (
         // Folder contents
-        <ul className="files-grid">
+        <ul
+          className={clsx(
+            "files-grid",
+            // Trash items look tossed in, like on the desktop
+            current.type === "trash" && "is-scattered"
+          )}
+        >
           {current.children?.map((item) => (
             <li key={item.id}>
               <button type="button" onClick={() => openItem(item)}>

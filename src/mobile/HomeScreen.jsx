@@ -49,6 +49,12 @@ const HomeScreen = ({ onPageChange }) => {
     openWindow("finder");
   };
 
+  // Archive has no window of its own: it opens Finder at the Trash folder
+  const openArchive = () => {
+    setActiveLocation(locations.trash);
+    openWindow("finder");
+  };
+
   return (
     <section className="home-screen">
       {/* Swipeable pages */}
@@ -108,7 +114,7 @@ const HomeScreen = ({ onPageChange }) => {
             label={archiveApp.name}
             src={`/images/${archiveApp.icon}`}
             dim={!archiveApp.canOpen}
-            onClick={() => archiveApp.canOpen && openWindow(archiveApp.id)}
+            onClick={() => archiveApp.canOpen && openArchive()}
           />
         </li>
       </ul>

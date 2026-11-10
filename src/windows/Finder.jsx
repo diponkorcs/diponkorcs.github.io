@@ -36,7 +36,10 @@ const Finder = () => {
             key={item.id}
             onClick={() => setActiveLocation(item)}
             className={clsx(
-              item.id === activeLocation.id ? "active" : "not-active"
+              // ids repeat between Favorites and My Projects, so match the name too
+              item.id === activeLocation?.id && item.name === activeLocation?.name
+                ? "active"
+                : "not-active"
             )}
           >
             <img src={item.icon} className="w-4" alt={item.name} />

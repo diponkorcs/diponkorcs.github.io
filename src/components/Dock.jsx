@@ -1,12 +1,15 @@
-import { dockApps } from "#constants";
+import { dockApps, locations } from "#constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
 import { Tooltip } from "react-tooltip";
 import useWindowStore from "#store/window.js";
+import useLocationStore from "#store/location.js";
 
 const Dock = () => {
   const { openWindow, closeWindow, windows } = useWindowStore();
+  const { activeLocation, setActiveLocation, resetActiveLocation } =
+    useLocationStore();
   const dockRef = useRef(null);
 
   //   useGSAP Hook to handle icon animations
@@ -67,6 +70,22 @@ const Dock = () => {
   const toggleApp = (app) => {
     // Implement Open Window Logic
     if (!app.canOpen) return;
+
+    // Archive has no window of its own: it opens Finder at the Trash folder
+    if (app.id === "trash") {
+      const isShowingTrash =
+        windows.finder.isOpen && activeLocation?.type === "trash";
+
+      if (isShowingTrash) return closeWindow("finder");
+
+      setActiveLocation(locations.trash);
+      return openWindow("finder");
+    }
+
+    // Portfolio should not reopen on the Trash folder after using Archive
+    if (app.id === "finder" && activeLocation?.type === "trash") {
+      resetActiveLocation();
+    }
 
     const window = windows[app.id];
 

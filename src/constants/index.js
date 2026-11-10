@@ -70,7 +70,7 @@ const dockApps = [
     id: "trash",
     name: "Archive", // was "Trash"
     icon: "trash.png",
-    canOpen: false,
+    canOpen: true, // opens Finder at the Trash folder
   },
 ];
 
@@ -254,70 +254,172 @@ const WORK_LOCATION = {
   icon: "/icons/work.svg",
   kind: "folder",
   children: [
-    // Extra Projects to be used later
-    // {
-    //   id: 8,
-    //   name: "IQF Education",
-    //   icon: "/images/folder.png",
-    //   kind: "folder",
-    //   position: "top-52 right-20",
-    //   windowPosition: "top-[70vh] left-30",
-    //   children: [
-    //     // {
-    //     //   id: 1,
-    //     //   name: "Food Delivery App Project.txt",
-    //     //   icon: "/images/txt.png",
-    //     //   kind: "file",
-    //     //   fileType: "txt",
-    //     //   position: "top-5 left-10",
-    //     //   description: [
-    //     //     "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
-    //     //     "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
-    //     //     "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
-    //     //     "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
-    //     //   ],
-    //     // },
-    //     {
-    //       id: 2,
-    //       name: "IQF-Education.com",
-    //       icon: "/images/safari.png",
-    //       kind: "file",
-    //       fileType: "url",
-    //       href: "https://www.iqfawards.com/index",
-    //       position: "top-10 right-20",
-    //     },
-    //     {
-    //       id: 4,
-    //       name: "iqf-education.png",
-    //       icon: "/images/image.png",
-    //       kind: "file",
-    //       fileType: "img",
-    //       position: "top-52 right-80",
-    //       imageUrl: "/images/Projects/IQFEducation/IQF.jpg",
-    //     },
-    //     // {
-    //     //   id: 5,
-    //     //   name: "Design.fig",
-    //     //   icon: "/images/plain.png",
-    //     //   kind: "file",
-    //     //   fileType: "fig",
-    //     //   href: "https://google.com",
-    //     //   position: "top-60 right-20",
-    //     // },
-    //   ],
-    // },
+    // Order here = order everywhere (Finder sidebar, desktop, mobile)
+    // ▶ Project 1: TGIT Bangladesh
+    {
+      id: 3,
+      name: "TGIT Bangladesh",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-6 left-4", // icon position inside the Finder "Work" folder
+      windowPosition: "top-[8vh] left-10", // icon position on the desktop
+      children: [
+        // {
+        //   id: 1,
+        //   name: "Food Delivery App Project.txt",
+        //   icon: "/images/txt.png",
+        //   kind: "file",
+        //   fileType: "txt",
+        //   position: "top-5 left-10",
+        //   description: [
+        //     "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
+        //     "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
+        //     "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
+        //     "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
+        //   ],
+        // },
+        {
+          id: 2,
+          name: "TGIT-Bangladesh.com",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://tgitbangladesh.com/",
+          position: "top-10 right-20",
+        },
+        {
+          id: 4,
+          name: "tgit-dark-mode.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-52 right-80",
+          imageUrl: "/images/Projects/TGIT Bangladesh/TGIT-Dark.jpg",
+        },
+        {
+          id: 5,
+          name: "tgit-light-mode.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-10 left-5",
+          imageUrl: "/images/Projects/TGIT Bangladesh/TGIT-Light.jpg",
+        },
+        // {
+        //   id: 6,
+        //   name: "Design.fig",
+        //   icon: "/images/plain.png",
+        //   kind: "file",
+        //   fileType: "fig",
+        //   href: "https://google.com",
+        //   position: "top-60 right-20",
+        // },
+      ],
+    },
 
-    // ▶ Project 1
+    // ▶ Project 2: Rang Mein Bhang
+    {
+      id: 5,
+      name: "Rang Mein Bhang",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-12 left-50", // icon position inside the Finder "Work" folder
+
+      // windowPosition: "top-[5vh] left-50",
+      windowPosition: "top-[19vh] right-10", // icon position on the desktop
+      children: [
+        // {
+        //   id: 1,
+        //   name: "AI Resume Analyzer Project.txt",
+        //   icon: "/images/txt.png",
+        //   kind: "file",
+        //   fileType: "txt",
+        //   position: "top-5 right-10",
+        //   description: [
+        //     "AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.",
+        //     "Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.",
+        //     "Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.",
+        //     "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
+        //   ],
+        // },
+
+        // Link
+        {
+          id: 2,
+          name: "RangMeinBhang.com",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://rangmeinbhang.com/",
+          position: "top-20 left-20",
+        },
+
+        // Image
+        {
+          id: 4,
+          name: "rangmeinbhang.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-52 left-80",
+          imageUrl: "/images/Projects/RangMeinBhang/RMB.jpg",
+        },
+        // {
+        //   id: 5,
+        //   name: "Design.fig",
+        //   icon: "/images/plain.png",
+        //   kind: "file",
+        //   fileType: "fig",
+        //   href: "https://google.com",
+        //   position: "top-60 left-5",
+        // },
+      ],
+    },
+
+    // ▶ Project 3: Barrister Saad
+    {
+      id: 6,
+      name: "Barrister Saad",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-6 right-4", // icon position inside the Finder "Work" folder
+      windowPosition: "top-[30vh] left-24", // icon position on the desktop
+      children: [
+        // Link
+        {
+          id: 1,
+          name: "BarristerSaad.com",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://barristersaad.com/",
+          position: "top-10 left-10",
+        },
+
+        // Image
+        {
+          id: 2,
+          name: "barrister-saad.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-48 right-20",
+          imageUrl: "/images/Projects/BarristerSaad/Saad.jpg",
+        },
+      ],
+    },
+
+    // ▶ Project 4: Brain Accounting
     {
       id: 1,
       // id: 9,
       name: "Brain Accounting",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-5",
+      position: "top-44 left-14", // icon position inside the Finder "Work" folder
       // position: "top-10 right-50",
       // windowPosition: "top-[70vh] right-15",
-      windowPosition: "top-[5vh] left-50",
+      windowPosition: "top-[41vh] right-24", // icon position on the desktop
       children: [
         // {
         //   id: 1,
@@ -363,131 +465,16 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 2
-    {
-      id: 2,
-      name: "Smart Think BD",
-      icon: "/images/folder.png",
-      kind: "folder",
-      position: "top-10 right-50", // icon position inside Finder
-      // position: "top-10 left-5", // icon position inside Finder
-      // windowPosition: "top-[33vh] left-7", // optional: Finder window position
-      windowPosition: "top-[33vh] left-20", // optional: Finder window position
-      children: [
-        // {
-        //   id: 1,
-        //   name: "Nike Project.txt",
-        //   icon: "/images/txt.png",
-        //   kind: "file",
-        //   fileType: "txt",
-        //   position: "top-52 right-80",
-        //   description: [
-        //     "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
-        //     "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
-        //     "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
-        //     "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
-        //   ],
-        // },
-
-        // Link
-        {
-          id: 2,
-          name: "SmartThinksBD.com",
-          icon: "/images/safari.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://smartthinkbd.com/",
-          position: "top-10 right-20",
-        },
-
-        // Image
-        {
-          id: 4,
-          name: "smartthinksbd.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          // position: "top-52 right-80",
-          position: "top-10 left-10",
-          imageUrl: "/images/Projects/SmartThink/Smart.jpg",
-        },
-        // Another Image
-        {
-          id: 5,
-          name: "ProductSpecification.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          // href: "https://google.com",
-          position: "top-60 right-20",
-          imageUrl: "/images/Projects/SmartThink/Product-Spec.jpg",
-        },
-      ],
-    },
-
-    // ▶ Project 3
-    {
-      id: 3,
-      name: "TGIT Bangladesh",
-      icon: "/images/folder.png",
-      kind: "folder",
-      position: "top-10 right-10",
-      windowPosition: "top-[5vh] right-7",
-      children: [
-        // {
-        //   id: 1,
-        //   name: "Food Delivery App Project.txt",
-        //   icon: "/images/txt.png",
-        //   kind: "file",
-        //   fileType: "txt",
-        //   position: "top-5 left-10",
-        //   description: [
-        //     "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
-        //     "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
-        //     "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
-        //     "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
-        //   ],
-        // },
-        {
-          id: 2,
-          name: "TGIT-Bangladesh.com",
-          icon: "/images/safari.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://tgitbangladesh.com/",
-          position: "top-10 right-20",
-        },
-        {
-          id: 4,
-          name: "tgit-bangladesh.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "top-52 right-80",
-          imageUrl: "/images/Projects/TGIT Bangladesh/TGIT.jpg",
-        },
-        // {
-        //   id: 5,
-        //   name: "Design.fig",
-        //   icon: "/images/plain.png",
-        //   kind: "file",
-        //   fileType: "fig",
-        //   href: "https://google.com",
-        //   position: "top-60 right-20",
-        // },
-      ],
-    },
-
-    // ▶ Project 4
+    // ▶ Project 5: Coffee Canvas
     {
       id: 4,
       name: "Coffee Canvas",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 right-80",
+      position: "top-48 right-24", // icon position inside the Finder "Work" folder
 
       // position: "top-52 right-20", // icon position inside Finder
-      windowPosition: "top-[70vh] left-25", // optional: Finder window position
+      windowPosition: "top-[52vh] left-10", // icon position on the desktop
       // windowPosition: "top-[33vh] left-15", // optional: Finder window position
       children: [
         // {
@@ -539,65 +526,100 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 5
+    // ▶ Project 6: Lavender Inn
     {
-      id: 5,
-      name: "Rang Mein Bhang",
+      id: 7,
+      name: "Lavender Inn",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 right-20", // icon position inside Finder
+      position: "top-80 left-6", // icon position inside the Finder "Work" folder
+      windowPosition: "top-[63vh] right-10", // icon position on the desktop
+      children: [
+        // Link
+        {
+          id: 1,
+          name: "LavenderInnBD.com",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://lavenderinnbd.com/",
+          position: "top-10 right-20",
+        },
 
-      // windowPosition: "top-[5vh] left-50",
-      windowPosition: "top-[70vh] right-15",
+        // Image
+        {
+          id: 2,
+          name: "lavender-inn.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-52 left-10",
+          imageUrl: "/images/Projects/LavenderInn/LavenderInn.jpg",
+        },
+      ],
+    },
+
+    // ▶ Project 7: Smart Think BD
+    {
+      id: 2,
+      name: "Smart Think BD",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-84 right-8", // icon position inside the Finder "Work" folder
+      // position: "top-10 left-5", // icon position inside Finder
+      // windowPosition: "top-[33vh] left-7", // optional: Finder window position
+      windowPosition: "top-[74vh] left-24", // icon position on the desktop
       children: [
         // {
         //   id: 1,
-        //   name: "AI Resume Analyzer Project.txt",
+        //   name: "Nike Project.txt",
         //   icon: "/images/txt.png",
         //   kind: "file",
         //   fileType: "txt",
-        //   position: "top-5 right-10",
+        //   position: "top-52 right-80",
         //   description: [
-        //     "AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.",
-        //     "Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.",
-        //     "Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.",
-        //     "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
+        //     "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
+        //     "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
+        //     "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
+        //     "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
         //   ],
         // },
 
         // Link
         {
           id: 2,
-          name: "RangMeinBhang.com",
+          name: "SmartThinksBD.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://rangmeinbhang.com/",
-          position: "top-20 left-20",
+          href: "https://smartthinkbd.com/",
+          position: "top-10 right-20",
         },
 
         // Image
         {
           id: 4,
-          name: "rangmeinbhang.png",
+          name: "smartthinksbd.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-52 left-80",
-          imageUrl: "/images/Projects/RangMeinBhang/RMB.jpg",
+          // position: "top-52 right-80",
+          position: "top-10 left-10",
+          imageUrl: "/images/Projects/SmartThink/Smart.jpg",
         },
-        // {
-        //   id: 5,
-        //   name: "Design.fig",
-        //   icon: "/images/plain.png",
-        //   kind: "file",
-        //   fileType: "fig",
-        //   href: "https://google.com",
-        //   position: "top-60 left-5",
-        // },
+        // Another Image
+        {
+          id: 5,
+          name: "ProductSpecification.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          // href: "https://google.com",
+          position: "top-60 right-20",
+          imageUrl: "/images/Projects/SmartThink/Product-Spec.jpg",
+        },
       ],
     },
-    // ▶ Project 6
   ],
 };
 
@@ -697,6 +719,15 @@ const TRASH_LOCATION = {
       fileType: "img",
       position: "top-40 left-80",
       imageUrl: "/images/Trash/SKY.jpg",
+    },
+    {
+      id: 3,
+      name: "IQF-Education.png",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      position: "top-72 left-24",
+      imageUrl: "/images/Trash/IQF.jpg",
     },
   ],
 };

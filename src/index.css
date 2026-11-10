@@ -833,6 +833,23 @@ body {
       }
     }
 
+    /* Trash: items look tossed in rather than lined up */
+    .files-grid.is-scattered {
+      @apply gap-y-12 pt-4;
+
+      li:nth-child(3n + 1) {
+        transform: translate(6px, 8px) rotate(-7deg);
+      }
+
+      li:nth-child(3n + 2) {
+        transform: translate(0, 40px) rotate(5deg);
+      }
+
+      li:nth-child(3n) {
+        transform: translate(-8px, -6px) rotate(-3deg);
+      }
+    }
+
     /* ── Experiences ── */
     .exp-list {
       @apply p-4 space-y-3;
