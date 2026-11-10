@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
-import dayjs from "dayjs";
+import clsx from "clsx";
 import { Wifi, Signal } from "lucide-react";
+import useNow from "#hooks/useNow.js";
 
-const StatusBar = () => {
-  const [now, setNow] = useState(dayjs());
-
-  // keep the clock ticking once a minute
-  useEffect(() => {
-    const id = setInterval(() => setNow(dayjs()), 60 * 1000);
-    return () => clearInterval(id);
-  }, []);
+// `showTime` is false on the first page, where the big lock-screen clock
+// is already visible (same as iOS).
+const StatusBar = ({ showTime = true }) => {
+  const now = useNow();
 
   return (
     <header className="status-bar">
-      <time>{now.format("h:mm")}</time>
+      <time className={clsx(!showTime && "is-hidden")}>
+        {now.format("h:mm")}
+      </time>
 
       <div className="status-icons">
         <Signal size={16} strokeWidth={2.5} />

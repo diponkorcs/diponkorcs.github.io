@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { dockApps, locations } from "#constants";
 import useWindowStore from "#store/window";
 import useLocationStore from "#store/location";
+import LockClock from "#mobile/LockClock.jsx";
 
 const projects = locations.work?.children ?? [];
 
@@ -19,18 +20,22 @@ const AppIcon = ({ label, src, onClick, dim = false }) => (
   </button>
 );
 
-const HomeScreen = () => {
+const HomeScreen = ({ onPageChange }) => {
   const { openWindow } = useWindowStore();
   const { setActiveLocation } = useLocationStore();
 
   const pagerRef = useRef(null);
   const [page, setPage] = useState(0);
 
-  // Update the page dots as the user swipes
+  // Update the page dots (and tell the parent) as the user swipes
   const handleScroll = () => {
     const el = pagerRef.current;
     if (!el) return;
-    setPage(Math.round(el.scrollLeft / el.clientWidth));
+    const current = Math.round(el.scrollLeft / el.clientWidth);
+    if (current !== page) {
+      setPage(current);
+      onPageChange?.(current);
+    }
   };
 
   const goToPage = (index) => {
@@ -48,9 +53,11 @@ const HomeScreen = () => {
     <section className="home-screen">
       {/* Swipeable pages */}
       <div ref={pagerRef} className="pager" onScroll={handleScroll}>
-        {/* Page 1: greeting */}
-        <div className="page">
-          <div className="greeting-widget">
+        {/* Page 1: date, clock, greeting */}
+        <div className="page page-intro">
+          <LockClock />
+
+          <div className="greeting-widget liquid-glass">
             <p>Hey, I'm Diponkor! Welcome to my</p>
             <h1>Portfolio</h1>
           </div>

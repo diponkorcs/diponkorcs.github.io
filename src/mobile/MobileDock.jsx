@@ -9,7 +9,7 @@ const MobileDock = () => {
   const { openWindow } = useWindowStore();
 
   return (
-    <footer className="mobile-dock">
+    <footer className="mobile-dock liquid-glass">
       {DOCK.map(({ id, name, icon }) => (
         <button
           key={id}

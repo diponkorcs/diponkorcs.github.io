@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Georama:ital,wdth,wght@0,62.5..150,100..900;1,62.5..150,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
 @import "tailwindcss";
 
@@ -426,6 +426,59 @@ body {
 }
 
 /* ───────────────────────── Mobile (iOS-style) UI ───────────────────────── */
+
+/*
+  iOS-style clear glass.
+  - almost no fill and only a light blur, so the wallpaper shows straight through
+  - a 1px gradient rim (the ::before ring) that is brighter on the top-left
+    and bottom-right edges, like light catching the edge of real glass
+  - soft inner glow + outer shadow to lift it off the wallpaper
+  Pure CSS, so it looks the same in Safari, Chrome and Firefox.
+*/
+@utility liquid-glass {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 45%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.12),
+    inset 0 0 24px rgba(255, 255, 255, 0.06),
+    0 10px 30px rgba(0, 0, 0, 0.2);
+
+  /* lit edge ring */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(255, 255, 255, 0.18) 22%,
+      rgba(255, 255, 255, 0.04) 50%,
+      rgba(255, 255, 255, 0.18) 78%,
+      rgba(255, 255, 255, 0.55) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box exclude,
+      linear-gradient(#000 0 0);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
 @layer components {
   /* Plain percentages on purpose: the desktop `main` rule uses dvw/dvh,
      which some embedded browsers resolve to the whole window. */
@@ -436,6 +489,9 @@ body {
   }
 
   #mobile {
+    /* one icon size for the grid and the dock, scales with phone width */
+    --icon-size: clamp(60px, 17.5vw, 72px);
+
     @apply relative overflow-hidden flex flex-col text-white select-none;
     /* keep content clear of the notch / home indicator */
     padding-top: env(safe-area-inset-top);
@@ -452,7 +508,11 @@ body {
       @apply flex items-center justify-between px-7 h-12 text-[15px] font-semibold;
 
       time {
-        @apply tracking-tight;
+        @apply tracking-tight transition-opacity duration-300;
+
+        &.is-hidden {
+          @apply opacity-0;
+        }
       }
 
       .status-icons {
@@ -499,11 +559,46 @@ body {
       scroll-snap-stop: always;
     }
 
+    .page-intro {
+      @apply flex flex-col items-center pt-1;
+    }
+
+    /* Lock-screen date + clock */
+    .lock-clock {
+      @apply flex flex-col items-center text-center mb-6;
+    }
+
+    .lock-date {
+      @apply font-georama text-[19px] font-semibold text-white/90;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .lock-time {
+      @apply font-georama leading-none tracking-tight;
+      font-size: clamp(96px, 31vw, 136px);
+      /* tall, thin digits like the iOS lock screen */
+      font-variation-settings: "wght" 300, "wdth" 62.5;
+      font-stretch: 62.5%;
+      /* glass digits: see-through fill with a soft lit outline */
+      color: rgba(255, 255, 255, 0.28);
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+      text-shadow:
+        0 0 14px rgba(255, 255, 255, 0.2),
+        0 2px 10px rgba(0, 0, 0, 0.12);
+
+      /* lift the colon to the middle of the digits, like iOS */
+      .colon {
+        display: inline-block;
+        transform: translateY(-0.07em);
+        margin: 0 0.02em;
+      }
+    }
+
     .greeting-widget {
-      @apply rounded-3xl bg-white/15 backdrop-blur-2xl border border-white/15 px-5 py-6 shadow-lg;
+      @apply w-full rounded-[28px] px-5 py-6 flex flex-col items-center justify-center text-center;
 
       p {
-        @apply font-georama text-[15px] font-light text-white/80;
+        @apply font-georama text-[15px] font-light text-white/85;
       }
 
       h1 {
@@ -512,7 +607,7 @@ body {
     }
 
     .app-grid {
-      @apply grid grid-cols-4 gap-x-3 gap-y-6;
+      @apply grid grid-cols-4 gap-x-2 gap-y-6;
 
       li {
         @apply flex justify-center min-w-0;
@@ -520,18 +615,20 @@ body {
     }
 
     .side-row {
-      @apply px-5 pb-4;
+      @apply px-4 pb-4;
     }
 
     .app-icon {
       @apply flex flex-col items-center gap-1.5 w-full min-w-0 cursor-pointer active:scale-90 transition-transform duration-150;
 
       img {
-        @apply size-[60px] rounded-[22%] object-cover object-center drop-shadow-md;
+        @apply rounded-[22%] object-cover object-center drop-shadow-md;
+        width: var(--icon-size);
+        height: var(--icon-size);
       }
 
       span {
-        @apply text-[11px] leading-tight text-center font-medium w-full truncate px-0.5;
+        @apply text-[12px] leading-tight text-center font-medium w-full truncate px-0.5;
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
       }
     }
@@ -540,7 +637,7 @@ body {
       @apply flex justify-center gap-2 py-3;
 
       button {
-        @apply size-1.5 rounded-full bg-white/40 transition-colors;
+        @apply size-[7px] rounded-full bg-white/40 transition-colors;
 
         &.active {
           @apply bg-white;
@@ -550,14 +647,16 @@ body {
 
     /* Dock */
     .mobile-dock {
-      @apply mx-3 mb-2 px-4 py-3 rounded-[32px] bg-white/20 backdrop-blur-2xl border border-white/10 flex justify-around items-center shadow-xl;
+      @apply mx-3 mb-2 px-3 py-3.5 rounded-[36px] flex justify-around items-center;
 
       button {
         @apply cursor-pointer active:scale-90 transition-transform duration-150;
       }
 
       img {
-        @apply size-[58px] rounded-[22%] object-cover object-center drop-shadow-md;
+        @apply rounded-[22%] object-cover object-center drop-shadow-md;
+        width: var(--icon-size);
+        height: var(--icon-size);
       }
     }
   }
