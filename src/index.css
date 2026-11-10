@@ -2,16 +2,44 @@
 
 @import "tailwindcss";
 
+:root {
+  /* Desktop wallpaper */
+  --wallpaper: url("/images/wallpaper4.jpg");
+  /* Mobile wallpaper: swap this for the iPhone wallpaper later */
+  --wallpaper-mobile: url("/images/wallpaper4.jpg");
+}
+
 html,
 body {
   width: 100dvw;
   overflow: hidden;
   height: 100dvh;
-  /* background-image: url("/images/wallpaper.png"); */
-  background-image: url("/images/wallpaper4.jpg");
+  background-image: var(--wallpaper);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+/*
+  Phones: iOS Safari ignores overflow:hidden on body, so the page could be
+  dragged around. Pinning the body with position:fixed stops that for good,
+  and overscroll-behavior removes the rubber-band bounce.
+*/
+@media (max-width: 767px) {
+  html,
+  body {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overscroll-behavior: none;
+    background-image: var(--wallpaper-mobile);
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @theme {
@@ -392,6 +420,144 @@ body {
         p {
           @apply text-sm text-white text-center px-1 rounded-md group-hover:bg-blue-500 transition-colors max-w-40;
         }
+      }
+    }
+  }
+}
+
+/* ───────────────────────── Mobile (iOS-style) UI ───────────────────────── */
+@layer components {
+  /* Plain percentages on purpose: the desktop `main` rule uses dvw/dvh,
+     which some embedded browsers resolve to the whole window. */
+  main#mobile {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+  }
+
+  #mobile {
+    @apply relative overflow-hidden flex flex-col text-white select-none;
+    /* keep content clear of the notch / home indicator */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    -webkit-tap-highlight-color: transparent;
+
+    img {
+      @apply pointer-events-none;
+      -webkit-user-drag: none;
+    }
+
+    /* Status bar */
+    .status-bar {
+      @apply flex items-center justify-between px-7 h-12 text-[15px] font-semibold;
+
+      time {
+        @apply tracking-tight;
+      }
+
+      .status-icons {
+        @apply flex items-center gap-1.5;
+      }
+
+      .battery {
+        @apply relative inline-block w-[25px] h-[12px] ml-1 rounded-[4px] border-[1.5px] border-white/90;
+
+        &::after {
+          content: "";
+          @apply absolute -right-[4px] top-1/2 -translate-y-1/2 w-[2px] h-[5px] rounded-r-sm bg-white/90;
+        }
+      }
+
+      .battery-level {
+        @apply absolute inset-[1.5px] rounded-[2px] bg-white;
+        width: 82%;
+      }
+    }
+
+    /* Home screen */
+    .home-screen {
+      @apply flex-1 flex flex-col min-h-0 overflow-hidden;
+    }
+
+    /* Swipeable pages (horizontal scroll-snap) */
+    .pager {
+      @apply flex-1 flex min-h-0 w-full overflow-x-auto overflow-y-hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .page {
+      @apply w-full flex-none px-5 pt-4 overflow-hidden;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .greeting-widget {
+      @apply rounded-3xl bg-white/15 backdrop-blur-2xl border border-white/15 px-5 py-6 shadow-lg;
+
+      p {
+        @apply font-georama text-[15px] font-light text-white/80;
+      }
+
+      h1 {
+        @apply font-georama italic text-5xl font-semibold leading-tight mt-1;
+      }
+    }
+
+    .app-grid {
+      @apply grid grid-cols-4 gap-x-3 gap-y-6;
+
+      li {
+        @apply flex justify-center min-w-0;
+      }
+    }
+
+    .side-row {
+      @apply px-5 pb-4;
+    }
+
+    .app-icon {
+      @apply flex flex-col items-center gap-1.5 w-full min-w-0 cursor-pointer active:scale-90 transition-transform duration-150;
+
+      img {
+        @apply size-[60px] rounded-[22%] object-cover object-center drop-shadow-md;
+      }
+
+      span {
+        @apply text-[11px] leading-tight text-center font-medium w-full truncate px-0.5;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    .page-dots {
+      @apply flex justify-center gap-2 py-3;
+
+      button {
+        @apply size-1.5 rounded-full bg-white/40 transition-colors;
+
+        &.active {
+          @apply bg-white;
+        }
+      }
+    }
+
+    /* Dock */
+    .mobile-dock {
+      @apply mx-3 mb-2 px-4 py-3 rounded-[32px] bg-white/20 backdrop-blur-2xl border border-white/10 flex justify-around items-center shadow-xl;
+
+      button {
+        @apply cursor-pointer active:scale-90 transition-transform duration-150;
+      }
+
+      img {
+        @apply size-[58px] rounded-[22%] object-cover object-center drop-shadow-md;
       }
     }
   }

@@ -32,6 +32,15 @@ export default defineConfig({
         dirname(fileURLToPath(import.meta.url)),
         "src/windows"
       ),
+      // Mobile (iOS-style) UI tree
+      "#mobile": resolve(
+        dirname(fileURLToPath(import.meta.url)),
+        "src/mobile"
+      ),
+      "#hooks": resolve(
+        dirname(fileURLToPath(import.meta.url)),
+        "src/hooks"
+      ),
     },
   },
 });

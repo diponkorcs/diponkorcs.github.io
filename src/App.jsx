@@ -9,33 +9,39 @@ import {
   Contact,
   Photos,
 } from "#windows";
+import MobileApp from "#mobile/MobileApp.jsx";
+import useIsMobile from "#hooks/useIsMobile.js";
 
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 
 gsap.registerPlugin(Draggable);
 
+const DesktopApp = () => (
+  <main>
+    <Navbar />
+    <Welcome />
+    <Dock />
+
+    {/* Windows */}
+    <Terminal />
+    <Safari />
+    <Resume />
+    <Finder />
+    <Text />
+    <Image />
+    <Contact />
+    <Photos />
+
+    {/* Shortcuts */}
+    <Home />
+  </main>
+);
+
 const App = () => {
-  return (
-    <main>
-      <Navbar />
-      <Welcome />
-      <Dock />
+  const isMobile = useIsMobile();
 
-      {/* Windows */}
-      <Terminal />
-      <Safari />
-      <Resume />
-      <Finder />
-      <Text />
-      <Image />
-      <Contact />
-      <Photos />
-
-      {/* Shortcuts */}
-      <Home />
-    </main>
-  );
+  return isMobile ? <MobileApp /> : <DesktopApp />;
 };
 
 export default App;
