@@ -661,3 +661,351 @@ body {
     }
   }
 }
+
+/* ───────────────────────── Mobile app sheets ───────────────────────── */
+@layer components {
+  #mobile {
+    /* iOS-style "push back" of the home screen while an app is open */
+    .home-screen,
+    .mobile-dock {
+      transition:
+        transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        filter 0.45s ease;
+    }
+
+    &.has-sheet {
+      .home-screen,
+      .mobile-dock {
+        transform: scale(0.94);
+        filter: brightness(0.65);
+      }
+
+      .sheet-backdrop {
+        @apply opacity-100 pointer-events-auto;
+      }
+    }
+
+    .sheet-backdrop {
+      @apply absolute inset-0 bg-black/25 opacity-0 pointer-events-none transition-opacity duration-300;
+      z-index: 999;
+    }
+
+    /* The sheet itself (display is controlled by GSAP) */
+    .sheet {
+      @apply absolute inset-x-0 bottom-0 flex-col bg-white text-gray-900 rounded-t-[14px] overflow-hidden;
+      top: calc(env(safe-area-inset-top) + 48px);
+      display: none;
+      box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.35);
+      will-change: transform;
+    }
+
+    .sheet-header {
+      @apply flex-none bg-gray-50/95 backdrop-blur-xl border-b border-gray-200 pt-1.5 pb-2 px-2.5;
+      touch-action: none;
+    }
+
+    .sheet-grabber {
+      @apply block mx-auto mb-1 w-9 h-[5px] rounded-full bg-gray-300;
+    }
+
+    .sheet-bar {
+      @apply grid items-center;
+      grid-template-columns: 1fr auto 1fr;
+
+      h2 {
+        @apply text-[15px] font-semibold text-gray-800 truncate text-center;
+        max-width: 55vw;
+      }
+    }
+
+    .sheet-controls {
+      @apply flex items-center justify-self-start;
+
+      button,
+      span {
+        /* bigger tap area than the dot itself */
+        @apply flex items-center justify-center size-7;
+      }
+
+      i {
+        @apply block size-3.5 rounded-full;
+      }
+
+      .close i {
+        background: #ff6157;
+      }
+
+      .minimize i {
+        background: #ffc030;
+      }
+
+      .maximize i {
+        background: #2acb42;
+      }
+    }
+
+    .sheet-actions {
+      @apply justify-self-end flex items-center gap-3 pr-1.5 text-gray-500;
+
+      a {
+        @apply p-1 rounded active:bg-gray-200;
+      }
+    }
+
+    .sheet-body {
+      @apply flex-1 min-h-0 overflow-y-auto select-text;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: calc(env(safe-area-inset-bottom) + 24px);
+    }
+
+    /* ── Finder (iOS Files style) ── */
+    .files-nav {
+      @apply px-4 pt-3;
+    }
+
+    .files-back {
+      @apply flex items-center text-blue-600 text-[16px] -ml-1.5 active:opacity-50;
+    }
+
+    .files-title {
+      @apply text-[30px] font-bold tracking-tight mt-1 mb-4;
+    }
+
+    .files-section {
+      @apply px-4 mb-6;
+
+      h3 {
+        @apply text-[13px] uppercase tracking-wide text-gray-500 font-medium px-3 mb-1.5;
+      }
+    }
+
+    .inset-list {
+      @apply bg-white rounded-xl overflow-hidden;
+
+      li:last-child .inset-row-text {
+        @apply border-b-0;
+      }
+    }
+
+    .inset-row {
+      @apply w-full flex items-center gap-3 pl-3 text-left active:bg-gray-100;
+
+      img {
+        @apply size-6 object-contain flex-none;
+      }
+    }
+
+    .inset-row-text {
+      @apply flex-1 flex items-center justify-between py-3 pr-3 border-b border-gray-200 min-w-0;
+
+      span {
+        @apply text-[16px] truncate;
+      }
+
+      svg {
+        @apply text-gray-400 flex-none;
+      }
+    }
+
+    .files-grid {
+      @apply grid grid-cols-3 gap-x-2 gap-y-6 px-3 pt-1;
+
+      button {
+        @apply w-full flex flex-col items-center gap-1.5 active:scale-95 transition-transform;
+      }
+
+      img {
+        @apply size-16 object-contain mb-1;
+      }
+
+      span {
+        @apply text-[13px] font-medium text-center leading-snug w-full line-clamp-2 break-words;
+      }
+
+      small {
+        @apply text-[11px] text-gray-400;
+      }
+    }
+
+    /* ── Experiences ── */
+    .exp-list {
+      @apply p-4 space-y-3;
+    }
+
+    .exp-heading {
+      @apply text-xl font-bold text-blue-600 px-1 pb-1;
+    }
+
+    .exp-card {
+      @apply flex gap-3.5 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm;
+
+      img {
+        @apply size-14 flex-none rounded-xl object-contain bg-gray-50 p-1;
+      }
+
+      h3 {
+        @apply font-semibold text-[15px] text-gray-800 leading-snug;
+      }
+
+      .role {
+        @apply text-[13px] text-gray-700 mt-0.5;
+      }
+
+      .period {
+        @apply text-xs text-gray-400 mt-0.5;
+      }
+
+      .desc {
+        @apply text-[13px] text-gray-600 mt-2 leading-relaxed;
+      }
+    }
+
+    /* ── Skills (Terminal) ── */
+    .term {
+      @apply font-roboto text-[13px] p-4;
+    }
+
+    .term-list {
+      @apply my-4 py-4 border-y border-dashed border-gray-300 space-y-4;
+    }
+
+    .term-row {
+      h3 {
+        @apply flex items-center gap-2 font-semibold text-[#00A154];
+      }
+
+      ul {
+        @apply flex flex-wrap gap-1.5 mt-2 ml-[26px];
+      }
+
+      li {
+        @apply px-2 py-0.5 rounded-md bg-gray-100 text-gray-700 text-[12px];
+      }
+    }
+
+    .term-foot {
+      @apply text-[#00A154] space-y-1.5;
+
+      p {
+        @apply flex items-center gap-2;
+      }
+    }
+
+    /* ── Gallery ── */
+    .photo-tabs {
+      @apply flex gap-2 overflow-x-auto px-4 py-3;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      button {
+        @apply flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 text-[13px] font-medium text-gray-700 whitespace-nowrap;
+
+        &.active {
+          @apply bg-blue-100 text-blue-700;
+        }
+      }
+
+      img {
+        @apply size-4;
+      }
+    }
+
+    .photo-grid {
+      @apply grid grid-cols-2 gap-1 px-1;
+
+      /* first photo, and a last photo left alone on its row, go full width */
+      li:first-child,
+      li:last-child:nth-child(even) {
+        @apply col-span-2;
+
+        button {
+          @apply aspect-[4/3];
+        }
+      }
+
+      button {
+        @apply block w-full aspect-square overflow-hidden rounded-md active:opacity-80;
+      }
+
+      img {
+        @apply size-full object-cover;
+      }
+    }
+
+    /* ── Contact ── */
+    .contact {
+      @apply flex flex-col items-center text-center px-5 pt-8;
+
+      .avatar {
+        @apply size-24 rounded-full object-cover shadow-lg ring-4 ring-white;
+      }
+
+      h3 {
+        @apply text-2xl font-semibold mt-4;
+      }
+
+      .sub {
+        @apply text-gray-500 mt-1;
+      }
+
+      .email {
+        @apply mt-5 inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gray-100 text-[13px] font-medium text-gray-800 active:bg-gray-200 max-w-full break-all;
+      }
+    }
+
+    .socials {
+      @apply grid grid-cols-2 gap-3 w-full mt-8;
+
+      a {
+        @apply flex flex-col items-start gap-6 p-4 rounded-2xl text-white text-sm font-semibold active:scale-95 transition-transform;
+      }
+
+      img {
+        @apply size-6;
+      }
+    }
+
+    /* ── Resume ── */
+    .resume-body {
+      @apply p-3;
+    }
+
+    .resume-page {
+      @apply mb-3 overflow-hidden rounded-md bg-white shadow;
+    }
+
+    .resume-msg {
+      @apply py-10 text-center text-sm text-gray-500;
+    }
+
+    /* ── Text file ── */
+    .txt {
+      @apply p-5 space-y-5;
+
+      img {
+        @apply w-full h-auto rounded-xl;
+      }
+
+      h3 {
+        @apply text-lg font-semibold;
+      }
+
+      p {
+        @apply text-[15px] leading-relaxed text-gray-800;
+      }
+    }
+
+    /* ── Image viewer ── */
+    .img-viewer {
+      @apply min-h-full flex items-center justify-center p-3;
+
+      img {
+        @apply max-w-full h-auto rounded-lg shadow;
+      }
+    }
+  }
+}

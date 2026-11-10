@@ -15,7 +15,10 @@ const MobileDock = () => {
           key={id}
           type="button"
           aria-label={name}
-          onClick={() => openWindow(id)}
+          onClick={() =>
+            // Portfolio from the dock opens at the Finder root ("Browse")
+            openWindow(id, id === "finder" ? { view: "root" } : null)
+          }
         >
           <img src={`/images/${icon}`} alt={name} />
         </button>
