@@ -43,4 +43,6 @@ export default defineConfig({
       ),
     },
   },
+
+  base: "/macos-portfolio",
 });
